@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS - Vježba 30</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    .flex-block {
+      display: flex;
+      flex-flow: row nowrap;
+      border: 1px solid black;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .flex-block__left {
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding: 16px;
+    }
+    .flex-block__right {
+      flex-grow: 1;
+      padding: 16px;
+    }
+    .circle {
+      display: block;
+      border-radius: 100%;
+      width: 100px;
+      height: 100px;
+      background: grey;
+    }
+    /* FLOAT */
+    .float-block {
+      border: 1px solid red;
+      position: relative;
+    }
+    .float-block::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    .float-block__left {
+      float: left;
+      padding: 16px;
+    }
+    .float-block__right {
+      float: left;
+      padding: 16px;
+      width: calc(100% - 132px);
+      position: absolute;
+      left: 132px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+  <div class="flex-block">
+    <div class="flex-block__left">
+      <div class="circle"></div>
+    </div>
+    <div class="flex-block__right">
+      <h1>Lorem</h1>
+      <p>Ipsum dolor sit</p>
+    </div>
+  </div>
+  <div class="float-block">
+    <div class="float-block__left">
+      <div class="circle"></div>
+    </div>
+    <div class="float-block__right">
+      <h1>Lorem</h1>
+      <p>Ipsum dolor sit</p>
+    </div>
+  </div>
+</body>
+</html>
